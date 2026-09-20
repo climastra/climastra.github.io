@@ -1,1 +1,6 @@
 /* css styles */
+
+
+.navbar-logo {
+  max-height: 50px; /* Adjust this value to fit your navbar height */
+}
