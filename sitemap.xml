@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://climastra.github.io/resources.html</loc>
+    <lastmod>2026-09-20T14:47:05.467Z</lastmod>
+  </url>
+  <url>
+    <loc>https://climastra.github.io/index.html</loc>
+    <lastmod>2026-09-20T14:53:17.103Z</lastmod>
+  </url>
+  <url>
     <loc>https://climastra.github.io/about.html</loc>
-    <lastmod>2026-09-20T11:49:44.666Z</lastmod>
+    <lastmod>2026-09-20T14:53:17.261Z</lastmod>
+  </url>
+  <url>
+    <loc>https://climastra.github.io/career.html</loc>
+    <lastmod>2026-09-20T14:46:39.125Z</lastmod>
+  </url>
+  <url>
+    <loc>https://climastra.github.io/our_products_services.html</loc>
+    <lastmod>2026-09-20T14:44:53.823Z</lastmod>
   </url>
 </urlset>
