@@ -1,15 +1,22 @@
 [
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "resources",
+    "objectID": "staff.html",
+    "href": "staff.html",
+    "title": "staff",
     "section": "",
     "text": "Back to top"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Climate Strategy and Analytics",
+    "objectID": "our_products_services.html",
+    "href": "our_products_services.html",
+    "title": "Our Products & Services",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "career.html",
+    "href": "career.html",
+    "title": "Careers",
     "section": "",
     "text": "Back to top"
   },
@@ -21,16 +28,23 @@
     "text": "Back to top"
   },
   {
-    "objectID": "career.html",
-    "href": "career.html",
-    "title": "career",
+    "objectID": "board_of_directors.html",
+    "href": "board_of_directors.html",
+    "title": "board_of_directors",
     "section": "",
     "text": "Back to top"
   },
   {
-    "objectID": "our_products_services.html",
-    "href": "our_products_services.html",
-    "title": "our_products_services",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Climate Strategy and Analytics",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
     "section": "",
     "text": "Back to top"
   }
