@@ -1,0 +1,28 @@
+
+.quarto-title-banner .title,
+  #title-block-header .title {
+  display: none;
+}
+
+/* subtitle */
+.subtitle {
+  padding: 0 2em 0 2em !important;
+  font-size: 2.5rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* description */
+.description{
+  padding: 0 2em 0 2em !important;
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
