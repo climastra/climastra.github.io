@@ -1,5 +1,11 @@
 /* css styles */
 
+#quarto-header {
+    top: 40px !important; /* Adjust based on your header's actual height */
+}
+body {
+    padding-top: 50px; /* Prevents text overlaps */
+}
 
 .navbar-logo {
   max-height: 50px; /* Adjust this value to fit your navbar height */
