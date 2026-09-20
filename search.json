@@ -1,51 +1,16 @@
 [
   {
-    "objectID": "staff.html",
-    "href": "staff.html",
-    "title": "staff",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "our_products_services.html",
-    "href": "our_products_services.html",
-    "title": "Our Products & Services",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "career.html",
-    "href": "career.html",
-    "title": "Careers",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "board_of_directors.html",
-    "href": "board_of_directors.html",
-    "title": "board_of_directors",
-    "section": "",
-    "text": "Back to top"
+    "text": "About this site"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Climate Strategy and Analytics",
+    "title": "climastra.github.io",
     "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Resources",
-    "section": "",
-    "text": "Back to top"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
