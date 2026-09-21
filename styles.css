@@ -61,9 +61,12 @@ html {
   text-decoration: underline;
 }
 
+/* hide-title */
+.navbar-title { display: none; }
 
 .navbar-logo {
-  max-height: 60px; /* Adjust this value to fit your navbar height */
+  max-height: 50px; /* Adjust this value to fit your navbar height */
+  margin-left: 100px;
 }
 
 /* Quarto page footer */
