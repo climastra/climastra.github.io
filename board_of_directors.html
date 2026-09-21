@@ -183,31 +183,108 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><br> <br> <br> <br></p>
-<table style="border-collapse: collapse; border:none; width:100%; margin-inline:auto;">
-<tbody><tr class="fs-5">
-<td style="border: none; text-align:center; vertical-align:middle;">
-<img src="image/Praveen.png" class="img-fluid" width="200">
-</td>
-<td style="border: none; text-align:center; vertical-align:middle;">
-<img src="image/Rajeev.png" class="img-fluid" width="200">
-</td>
-<td style="border: none; text-align:center; vertical-align:middle;">
-<img src="image/dummy_image.png" class="img-fluid" width="200">
-</td>
-</tr>
-<tr class="fs-5">
-<td style="border: none; text-align:center; vertical-align:middle;">
-Dr.&nbsp;Praveen Kumar Singh
-</td>
-<td style="border: none; text-align:center; vertical-align:middle;">
-Mr.&nbsp;Rajeev Ranjan
-</td>
-<td style="border: none; text-align:center; vertical-align:middle;">
-Director 3
-</td>
-</tr>
-</tbody></table>
+<p><br> <br></p>
+<div class="grid directors">
+<div class="g-col-12 g-col-md-4 card-plain director-card" data-bs-toggle="modal" data-bs-target="#director1">
+<p><img src="image/Praveen.png" alt="Dr. Praveen Kumar Singh" class="director-photo"></p>
+<p>Dr.&nbsp;Praveen Kumar Singh</p>
+</div>
+<div class="g-col-12 g-col-md-4 card-plain director-card" data-bs-toggle="modal" data-bs-target="#director2">
+<p><img src="image/Rajeev.png" alt="Mr. Rajeev Ranjan" class="director-photo"></p>
+<p>Mr.&nbsp;Rajeev Ranjan</p>
+</div>
+<div class="g-col-12 g-col-md-4 card-plain director-card" data-bs-toggle="modal" data-bs-target="#director3">
+<p><img src="image/dummy_image.png" alt="Director name" class="director-photo"></p>
+<p>Director name</p>
+</div>
+</div>
+<div class="modal fade" id="director1" tabindex="-1" aria-labelledby="director1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title anchored" id="director1Label"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 text-center">
+            <img src="image/Praveen.png" alt="Dr. Praveen Kumar Singh" class="director-photo-large">
+          </div>
+          <div class="col-md-7">
+            <h4 class="mb-1 text-center anchored">Dr. Praveen Kumar Singh</h4>
+            <p class="text-muted mb-3 text-center">Director</p>
+            <p>Short bio or details go here.</p>
+            <ul class="list-unstyled mb-0">
+              <li><strong>Email:</strong> name@example.com</li>
+              <li><strong>Phone:</strong> +91 00000 00000</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="director2" tabindex="-1" aria-labelledby="director2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title anchored" id="director2Label"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 text-center">
+            <img src="image/Rajeev.png" alt="Mr. Rajeev Ranjan" class="director-photo-large">
+          </div>
+          <div class="col-md-7">
+            <h4 class="mb-1 text-center anchored">Mr. Rajeev Ranjan</h4>
+            <p class="text-muted mb-3 text-center">Director</p>
+            <p>Short bio or details go here.</p>
+            <ul class="list-unstyled mb-0">
+              <li><strong>Email:</strong> name@example.com</li>
+              <li><strong>Phone:</strong> +91 00000 00000</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="director3" tabindex="-1" aria-labelledby="director3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title anchored" id="director3Label"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 text-center">
+            <img src="image/dummy_image.png" alt="Director name" class="director-photo-large">
+          </div>
+          <div class="col-md-7">
+            <h4 class="mb-1 text-center anchored">Director name</h4>
+            <p class="text-muted mb-3 text-center">Director</p>
+            <p>Short bio or details go here.</p>
+            <ul class="list-unstyled mb-0">
+              <li><strong>Email:</strong> name@example.com</li>
+              <li><strong>Phone:</strong> +91 00000 00000</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".modal").forEach(function (modal) {
+    document.body.appendChild(modal);
+  });
+});
+</script>
 
 
 

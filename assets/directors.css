@@ -26,3 +26,57 @@
   text-align: center;
 }
 
+
+
+
+/* ---------- Directors grid ---------- */
+.director-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centers photo and name as a group */
+  cursor: pointer;
+}
+
+/* photo wrapper and name share one width, so they line up exactly */
+.director-card > * {
+  width: 100%;
+  max-width: 250px;         /* adjust to taste */
+  margin: 0;
+}
+
+.director-card > p:last-child {
+  margin-top: 0.75rem;      /* gap between photo and name */
+  text-align: center;
+}
+
+/* Square photos on the cards */
+.director-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: original;
+  object-fit: cover;
+  object-position: center top;  /* keeps faces in frame */
+}
+
+/* Square photo inside the modal */
+.director-photo-large {
+  display: block;
+  width: 70%;
+  max-width: 400px;
+  aspect-ratio: original;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0 auto;
+}
+
+.director-card p {
+  margin: 0.75rem 0 0;   /* space between photo and name */
+  font-size: 1.1rem;
+}
+
+/* Safety net so the modal always sits above the backdrop */
+.modal-backdrop { z-index: 1050; }
+.modal { z-index: 1055; }
+
+
+
