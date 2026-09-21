@@ -1,4 +1,43 @@
 
+:root {
+  --top-bar-h: 60px;
+}
+
+/* The bar: solid hex background = fully opaque */
+#top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--top-bar-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: #86b93a;
+  color: #ffffff;
+  font-size: 0.875rem;
+  z-index: 1040;            /* above Bootstrap's fixed navbar (1030) */
+}
+#top-bar a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Push the navbar and page content down by the bar's height */
+#quarto-header.fixed-top {
+  top: var(--top-bar-h);
+}
+body {
+  margin-top: var(--top-bar-h);
+}
+
+/* Keep anchor jumps from landing under the bars */
+html {
+  scroll-padding-top: calc(var(--top-bar-h) + 70px);
+}
+
+
 .navbar-logo {
   max-height: 60px; /* Adjust this value to fit your navbar height */
 }
