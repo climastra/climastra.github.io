@@ -12,16 +12,18 @@
   height: var(--top-bar-h);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.75rem;
   background: #86b93a;
   color: #ffffff;
   font-size: 0.875rem;
   z-index: 1040;            /* above Bootstrap's fixed navbar (1030) */
+  padding: 0 1rem;  
 }
+
 #top-bar a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Push the navbar and page content down by the bar's height */
@@ -36,6 +38,9 @@ body {
 html {
   scroll-padding-top: calc(var(--top-bar-h) + 70px);
 }
+
+
+#top-bar .strip-item:last-child { position: absolute; right: 1rem; }
 
 
 
