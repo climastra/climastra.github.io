@@ -1,0 +1,58 @@
+
+
+/* Director column: center everything */
+.grid > section.level4 {
+  text-align: center;
+}
+
+/* Shrink the card and center it */
+.grid > section.level4 .quarto-listing,
+.grid > section.level4 .quarto-grid-item {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Scale the photo to the card instead of a fixed 450px */
+.grid > section.level4 .thumbnail-image {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Remove the card chrome so the photo sits flush with the text */
+.grid > section.level4 .quarto-grid-item {
+  border: none;
+  background: transparent;
+}
+.grid > section.level4 .card-img-top {
+  margin-bottom: 0;
+}
+
+/* Spacing between name, photo and link */
+.grid > section.level4 h4 {
+  margin-bottom: 0.75rem;
+}
+.grid > section.level4 .about-links {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Director name: match the photo's width and center it */
+.grid > section.level4 h4 {
+  text-align: center;
+  max-width: 300px;        /* same as the photo */
+  white-space: nowrap;
+  margin: 0 auto 0.75rem;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+/* Keep the anchor icon from shifting the name */
+.grid > section.level4 h4 .anchorjs-link {
+  position: absolute;
+  margin-left: 0.25rem;
+}
+
+
+
