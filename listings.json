@@ -9,17 +9,17 @@
     ]
   },
   {
+    "listing": "/advisors/index.html",
+    "items": [
+      "/advisors/advisor-1/index.html"
+    ]
+  },
+  {
     "listing": "/board-of-directors/index.html",
     "items": [
       "/board-of-directors/praveen-k-singh/index.html",
       "/board-of-directors/rajeev-ranjan/index.html",
       "/board-of-directors/director-3/index.html"
-    ]
-  },
-  {
-    "listing": "/advisors/index.html",
-    "items": [
-      "/advisors/advisor-1/index.html"
     ]
   }
 ]
