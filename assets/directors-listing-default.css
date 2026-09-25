@@ -34,9 +34,36 @@
 .grid > section.level4 h4 {
   margin-bottom: 0.75rem;
 }
-.grid > section.level4 .about-links {
-  display: inline-block;
-  margin-top: 0.5rem;
+//.grid > section.level4 .about-links {
+//  display: inline-block;
+//  margin-top: -0.5rem;      /* negative pulls it closer to the photo */
+//  font-size: 0.8rem;        /* smaller text */
+//  line-height: 1.2;
+//}
+
+/* Remove the padding Quarto adds under the photo, which pushes the link down */
+//.grid > section.level4 .quarto-grid-item .card-body {
+//  padding: 0;
+//}
+//.grid > section.level4 .quarto-grid-item {
+//  margin-bottom: 0;
+//}
+
+.grid > section.level4 .about-links .btn {
+  font-size: 0.8rem;
+  padding: 10rem 0.7rem;
+  border-radius: 20px;          /* pill shape; use 6px for slightly rounded */
+  margin-top: -3.5rem;          /* shift upward */
+}
+
+/* Optional: custom colors instead of Bootstrap's blue */
+.grid > section.level4 .about-links .btn-outline-primary {
+  color: #1f4e79;
+  border-color: #1f4e79;
+}
+.grid > section.level4 .about-links .btn-outline-primary:hover {
+  background-color: #1f4e79;
+  color: #fff;
 }
 
 /* Director name: match the photo's width and center it */
@@ -46,6 +73,7 @@
   white-space: nowrap;
   margin: 0 auto 0.75rem;
   font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 700;
 }
 
 /* Keep the anchor icon from shifting the name */
