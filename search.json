@@ -18,7 +18,7 @@
     "href": "staff/index.html",
     "title": "Staff",
     "section": "",
-    "text": "Staff 1\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more →\n\n\nStaff 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more →\n\n\nStaff 3\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more →\n\n\nStaff 4\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more →\n\n\n\n\n\n\n Back to top"
+    "text": "Staff 1\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more\n\n\nStaff 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more\n\n\nStaff 3\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more\n\n\nStaff 4\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "resources/index.html",
@@ -63,6 +63,13 @@
     "text": "Dr. Praveen Kumar Singh\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nKnow more\n\n\nMr. Rajeev Ranjan\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nKnow more\n\n\nDirector 3\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nKnow more\n\n\n\n\n\n\n Back to top"
   },
   {
+    "objectID": "advisors/index.html",
+    "href": "advisors/index.html",
+    "title": "Advisors",
+    "section": "",
+    "text": "Advisor 1\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\nknow more\n\n\n\n\n\n\n Back to top"
+  },
+  {
     "objectID": "about/index.html",
     "href": "about/index.html",
     "title": "index",
@@ -73,6 +80,13 @@
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "advisors/advisor-1/index.html",
+    "href": "advisors/advisor-1/index.html",
+    "title": "Advisor 1",
     "section": "",
     "text": "Back to top"
   },

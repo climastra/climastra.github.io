@@ -15,5 +15,11 @@
       "/board-of-directors/rajeev-ranjan/index.html",
       "/board-of-directors/director-3/index.html"
     ]
+  },
+  {
+    "listing": "/advisors/index.html",
+    "items": [
+      "/advisors/advisor-1/index.html"
+    ]
   }
 ]
