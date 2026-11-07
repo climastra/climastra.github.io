@@ -1,8 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 **/assets/ export-ignore
-**/certificates/ export-ignore
-**/gallery/ export-ignore
 **/contact/ export-ignore
 **/about/ export-ignore
 **/staff/ export-ignore
