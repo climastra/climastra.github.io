@@ -58,7 +58,7 @@
 })();
 
 (function () {
-  // ---- Products & Services: pillar filter tabs ----------------------------
+  // ---- Products & Services: area-of-expertise filter tabs ----------------------------
   var filters = document.querySelectorAll(".filter-btn");
   var cards = document.querySelectorAll("[data-category]");
   function applyFilter(f) {
@@ -74,7 +74,7 @@
   filters.forEach(function (b) {
     b.addEventListener("click", function () { applyFilter(b.getAttribute("data-filter")); });
   });
-  // Deep links like /products-services/#geohazard show that pillar
+  // Deep links like /products-services/#geohazard show that area of expertise
   if (filters.length && location.hash) {
     var h = location.hash.slice(1);
     var match = document.querySelector('.filter-btn[data-filter="' + h + '"]');
