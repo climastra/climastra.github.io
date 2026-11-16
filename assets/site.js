@@ -89,7 +89,6 @@
   if (!form) return;
   var params = new URLSearchParams(location.search);
   var topics = {
-    "capability-deck": "Request: CLIMASTRA capability deck",
     "sample-methodology": "Request: sample methodology note",
     "technical-report": "Request: full technical brief",
     "careers": "Careers / internship enquiry",
