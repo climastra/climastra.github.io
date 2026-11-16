@@ -1,8 +1,14 @@
-CNAME
-index.html
-**/about/ 
-**/assets/ export-ignore
-**/contact/ export-ignore
+CNAME export-ignore
+index.html export-ignore
 **/about/ export-ignore
-**/staff/ export-ignore
+**/advisors/ export-ignore
+**/assets/ export-ignore
 **/board-of-directors/ export-ignore
+**/careers/ export-ignore
+**/contact/ export-ignore
+**/image/ export-ignore
+**/privacy/ export-ignore
+**/products-services/ export-ignore
+**/resources/ export-ignore
+**/staff/ export-ignore
+
