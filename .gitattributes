@@ -1,5 +1,6 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+CNAME
+index.html
+**/about/ 
 **/assets/ export-ignore
 **/contact/ export-ignore
 **/about/ export-ignore
