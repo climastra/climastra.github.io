@@ -1,15 +1,7 @@
-.gitattributes export-ignore
-CNAME export-ignore
-index.html export-ignore
-**/about/ export-ignore
-**/advisors/ export-ignore
+# Auto detect text files and perform LF normalization
+* text=auto
 **/assets/ export-ignore
-**/board-of-directors/ export-ignore
-**/careers/ export-ignore
 **/contact/ export-ignore
-**/image/ export-ignore
-**/privacy/ export-ignore
-**/products-services/ export-ignore
-**/resources/ export-ignore
+**/about/ export-ignore
 **/staff/ export-ignore
-
+**/board-of-directors/ export-ignore
