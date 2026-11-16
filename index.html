@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-IN" xml:lang="en-IN"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="CLIMASTRA delivers 2D hydrodynamic and GLOF flood modeling, landslide susceptibility, BRSR climate risk analytics, remote sensing and GIS across India.">
 
-<title>Home – CLIMASTRA</title>
+<title>CLIMASTRA | Flood Modeling &amp; Climate Risk Consultancy, India</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,35 +28,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="./image/favicon-48.png" rel="icon" type="image/png">
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//image/logo_minimal_b.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-60e497e0112708718b2c58f413bbdae4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-80459699f9f9f825c03a32ceb61a3b9b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-2440e8811726809cddcc5623c01b7559.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -70,66 +54,215 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link rel="stylesheet" href="assets/index.css">
+<!-- Google Search Console ownership verification -->
+<meta name="google-site-verification" content="EzwyFmuZOtGHybsOR6v6uQFDqV_Cc5MhR3OBi_Cui2o">
+
+<!-- Google Analytics 4 (G-C40CH55MES) and Google Tag Manager (GTM-MWG2TC9S),
+     loaded ONLY after the visitor opts in.
+     NOTE: GA4 is loaded here directly. Do NOT also add a GA4 / Google tag for
+     G-C40CH55MES inside Tag Manager, or every visit will be counted twice.
+     Consent-first, in line with India's Digital Personal Data Protection Act,
+     2023 and DPDP Rules, 2025: nothing is sent to Google until the visitor
+     clicks "Accept analytics" in the banner (see _partials/footer.html and
+     assets/site.js). Google Consent Mode v2 defaults are set to "denied"
+     as an extra safeguard. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', functionality_storage: 'granted', security_storage: 'granted'
+  });
+  window.CLIMASTRA_GTM_ID = 'GTM-MWG2TC9S';
+  window.CLIMASTRA_GA4_ID = 'G-C40CH55MES';
+  window.climastraLoadGTM = function () {
+    if (window.__climastraGtmLoaded) return;
+    window.__climastraGtmLoaded = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',window.CLIMASTRA_GTM_ID);
+    // Google Analytics 4
+    var g = document.createElement('script');
+    g.async = true;
+    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.CLIMASTRA_GA4_ID;
+    document.head.appendChild(g);
+    gtag('js', new Date());
+    gtag('config', window.CLIMASTRA_GA4_ID, { anonymize_ip: true });
+  };
+  (function () {
+    try {
+      var c = JSON.parse(localStorage.getItem('climastra-consent') || 'null');
+      if (c && c.analytics === 'granted') window.climastraLoadGTM();
+    } catch (e) {}
+  })();
+</script>
+<link rel="preload" href="./assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="./assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="apple-touch-icon" href="./image/apple-touch-icon.png">
+<meta name="theme-color" content="#0F172A">
 
 
+<meta property="og:title" content="CLIMASTRA | Flood Modeling &amp; Climate Risk Consultancy, India">
+<meta property="og:description" content="CLIMASTRA delivers 2D hydrodynamic and GLOF flood modeling, landslide susceptibility, BRSR climate risk analytics, remote sensing and GIS across India.">
+<meta property="og:image" content="https://climastra.in/image/climastra-og.jpg">
+<meta property="og:site_name" content="CLIMASTRA">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:title" content="CLIMASTRA | Flood Modeling &amp; Climate Risk Consultancy, India">
+<meta name="twitter:description" content="CLIMASTRA delivers 2D hydrodynamic and GLOF flood modeling, landslide susceptibility, BRSR climate risk analytics, remote sensing and GIS across India.">
+<meta name="twitter:image" content="https://climastra.in/image/climastra-og.jpg">
+<meta name="twitter:site" content="@climastra">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://climastra.in/">
+<link rel="canonical" href="https://climastra.in/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "@id": "https://climastra.in/#organization",
+ "name": "CLIMASTRA",
+ "alternateName": "CLIMASTRA – Climate Strategy and Analytics",
+ "url": "https://climastra.in/",
+ "logo": "https://climastra.in/image/logo-dark.png",
+ "image": "https://climastra.in/image/climastra-og.jpg",
+ "description": "Indian environmental consultancy delivering 2D hydrodynamic and GLOF flood modeling, landslide and geohazard assessment, climate risk and SEBI BRSR analytics, remote sensing and GIS.",
+ "email": "contact@climastra.in",
+ "areaServed": {
+  "@type": "Country",
+  "name": "India"
+ },
+ "founder": [
+  {
+   "@type": "Person",
+   "name": "Rajeev Ranjan",
+   "honorificPrefix": "Dr.",
+   "url": "https://climastra.in/board-of-directors/rajeev-ranjan/"
+  },
+  {
+   "@type": "Person",
+   "name": "Praveen Kumar Singh",
+   "honorificPrefix": "Dr.",
+   "url": "https://climastra.in/board-of-directors/praveen-k-singh/"
+  }
+ ],
+ "knowsAbout": [
+  "Hydrodynamic modeling",
+  "HEC-RAS 2D",
+  "Glacial lake outburst flood (GLOF) modeling",
+  "Dam-break analysis",
+  "Flood risk mapping",
+  "Landslide susceptibility mapping",
+  "Climate risk assessment",
+  "SEBI BRSR physical climate risk",
+  "CMIP6 climate projections",
+  "Remote sensing",
+  "GIS",
+  "Google Earth Engine",
+  "Environmental impact assessment"
+ ],
+ "contactPoint": {
+  "@type": "ContactPoint",
+  "contactType": "sales",
+  "email": "contact@climastra.in",
+  "areaServed": "IN",
+  "availableLanguage": [
+   "English",
+   "Hindi"
+  ]
+ },
+ "sameAs": [
+  "https://www.linkedin.com/company/climastra",
+  "https://www.instagram.com/climastra.in",
+  "https://www.facebook.com/climastra",
+  "https://x.com/climastra"
+ ],
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "F12-0118, Amrapali, Centurian Park, Tropical Garden, Tech Zone IV",
+  "addressLocality": "Greater Noida",
+  "addressRegion": "Uttar Pradesh",
+  "postalCode": "201318",
+  "addressCountry": "IN"
+ }
+}</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "@id": "https://climastra.in/#website",
+ "name": "CLIMASTRA",
+ "alternateName": "CLIMASTRA – Climate Strategy and Analytics",
+ "url": "https://climastra.in/",
+ "inLanguage": "en-IN",
+ "publisher": {
+  "@id": "https://climastra.in/#organization"
+ }
+}</script>
 </head>
 
-<body class="nav-fixed index quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./image/logo_h_b.png" alt="CLIMASTRA – Climate Strategy and Analytics" class="navbar-logo light-content">
-    <img src="./image/logo_h_b.png" alt="CLIMASTRA – Climate Strategy and Analytics" class="navbar-logo dark-content">
-    </a>
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">CLIMASTRA</span>
+    <a href="./" class="navbar-brand navbar-brand-logo">
+    <img decoding="async" src="./image/logo-dark.webp" alt="CLIMASTRA – Climate Strategy and Analytics" class="navbar-logo light-content">
+    <img decoding="async" src="./image/logo-dark.webp" alt="CLIMASTRA – Climate Strategy and Analytics" class="navbar-logo dark-content">
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
         <li>
-    <a class="dropdown-item" href="./about/index.html">
- <span class="dropdown-text">About</span></a>
+    <a class="dropdown-item" href="./about/">
+ <span class="dropdown-text">About CLIMASTRA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./board-of-directors/index.html">
+    <a class="dropdown-item" href="./board-of-directors/">
  <span class="dropdown-text">Board of Directors</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./staff/index.html">
- <span class="dropdown-text">Staff</span></a>
+    <a class="dropdown-item" href="./advisors/">
+ <span class="dropdown-text">Advisors</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./advisors/index.html">
- <span class="dropdown-text">Advisors</span></a>
+    <a class="dropdown-item" href="./staff/">
+ <span class="dropdown-text">Staff</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./products-services/index.html"> 
+    <a class="nav-link" href="./products-services/"> 
 <span class="menu-text">Products &amp; Services</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./careers/index.html"> 
+    <a class="nav-link" href="./resources/"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./careers/"> 
 <span class="menu-text">Careers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources/index.html"> 
-<span class="menu-text">Resources</span></a>
+    <a class="nav-link" href="./contact/"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact/?topic=capability-deck"> 
+<span class="menu-text">Request Capability Deck</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -137,163 +270,286 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <div id="quarto-announcement" data-announcement-id="5f873214118b91f4d3e023e6f6d2bee5" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>coming soon …</p>
+  <div id="quarto-announcement" data-announcement-id="99602409700c720dfc729c32f4746b01" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>CLIMASTRA is completing its company registration. We are already welcoming project enquiries and research collaborations — <a href=".\contact/">get in touch</a>.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
 
 
 
 
-<p><br><br></p>
-<div class="quarto-about-marquee column-page">
-  <div class="about-image-container">
-    <img src="image/20230925_151448_02.png" class="about-image " style="width: 100%;">
+<!-- ============================ HERO ============================ -->
+<section class="topo-bg hero" aria-labelledby="hero-title">
+  <div class="glow glow-teal"></div>
+  <div class="glow glow-sky"></div>
+  <div class="wrap">
+    <div class="split center">
+      <div class="span-7 stack">
+        <div class="badge-live"><span class="dot"></span>Earth Science • Hydrodynamics • Climate Risk Intelligence</div>
+        <h1 id="hero-title" class="h-hero">Translating Environmental Data into <span class="gradient-text">Engineering-Grade Intelligence</span></h1>
+        <p class="lead-dark">CLIMASTRA – Climate Strategy and Analytics delivers 1D/2D hydrodynamic flood modeling, seismic-integrated geohazard assessments, satellite analytics, and BRSR-aligned climate risk intelligence for governments, infrastructure developers, and enterprises across India.</p>
+        <div class="btn-row">
+          <a class="btnx btnx-teal btnx-lg" href="./products-services/">Explore Technical Services
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg></a>
+          <a class="btnx btnx-ghost btnx-lg" href="./contact/?topic=sample-methodology">
+            <svg class="c-sky" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Request Sample Methodology</a>
+        </div>
+      </div>
+
+      <div class="span-5 mt-l">
+        <div class="telemetry">
+          <div class="telemetry-head">
+            <div>
+              <p class="t-label">Decision-Ready Deliverables</p>
+              <h2 class="t-title">Quantitative Modeling Stack</h2>
+            </div>
+            <span class="t-badge">DPR &amp; ESG Ready</span>
+          </div>
+          <a class="t-row" href="./products-services/#hydro">
+            <div>
+              <span class="t-k c-sky">01 • Hydrodynamic Routing</span>
+              <p class="t-v">2D GLOF, Dam-Break &amp; Urban Flood Modeling</p>
+              <p class="t-d">HEC-RAS 2D (SWE-ELM) • Depth, Velocity &amp; Arrival Time GeoTIFFs</p>
+            </div>
+            <span class="t-tag c-teal3">1D/2D</span>
+          </a>
+          <a class="t-row" href="./products-services/#geohazard">
+            <div>
+              <span class="t-k c-teal">02 • Terrain &amp; Geohazards</span>
+              <p class="t-v">Seismic-Integrated Landslide Susceptibility</p>
+              <p class="t-d">Himalayan Corridor Risk Profiling • InSAR &amp; Optical Change Detection</p>
+            </div>
+            <span class="t-tag c-sky3">GIS/SAR</span>
+          </a>
+          <a class="t-row" href="./products-services/#climate">
+            <div>
+              <span class="t-k c-emerald">03 • Climate &amp; ESG Disclosures</span>
+              <p class="t-v">SEBI BRSR Core Physical Risk &amp; CMIP6 Projections</p>
+              <p class="t-d">Asset-Level Flood, Heat &amp; Water-Stress Scoring • GEE Pipelines</p>
+            </div>
+            <span class="t-tag c-emerald3">SSP2-4.5 / 5-8.5</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cred-bar">
+      <div class="item"><svg class="c-teal" fill="currentColor" viewbox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>Led by IIT Roorkee &amp; IIRS Alumni</strong></div>
+      <span class="sep">|</span>
+      <div class="item"><svg class="c-sky" fill="currentColor" viewbox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>HEC-RAS 2D • Google Earth Engine • CMIP6</strong></div>
+      <span class="sep">|</span>
+      <div class="item"><svg class="c-teal" fill="currentColor" viewbox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>Built for DPR, EIA &amp; BRSR Deliverables</strong></div>
+    </div>
   </div>
-  <div class="about-contents">
-    <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Home</h1>
-<p class="subtitle lead">Transforming environmental data into insights, insights into strategies, and strategies into sustainable action.</p>
+</section>
+
+<!-- ============================ PILLARS ============================ -->
+<section class="section section-white" aria-labelledby="pillars-title">
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow">Products &amp; Technical Services</span>
+      <h2 id="pillars-title" class="h-section">Four Core Pillars, One Integrated Earth-Science Team</h2>
+      <p class="lead">Structured around the engineering, regulatory, and climate-disclosure requirements of Indian infrastructure agencies, hydropower developers, and corporate sustainability teams.</p>
+    </div>
+    <div class="cgrid grid-md-2 grid-lg-4 mt-l">
+      <article class="card-x tone-sky">
+        <div>
+          <div class="card-head">
+            <div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg></div>
+            <span class="num-pill">Pillar 01</span>
+          </div>
+          <h3 class="h-card"><a href="./products-services/#hydro">Hydrodynamic &amp; Flood Risk Modeling</a></h3>
+          <p class="small-text">1D/2D unsteady flow, GLOF and dam-break routing, floodplain zoning and urban drainage master plans.</p>
+        </div>
+        <div class="card-foot"><a class="text-link" href="./products-services/#hydro">Explore pillar →</a></div>
+      </article>
+      <article class="card-x tone-teal">
+        <div>
+          <div class="card-head">
+            <div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18L14 7l-4 7-3-4-4 10z"></path></svg></div>
+            <span class="num-pill">Pillar 02</span>
+          </div>
+          <h3 class="h-card"><a href="./products-services/#geohazard">Geohazard &amp; Terrain Intelligence</a></h3>
+          <p class="small-text">Seismic-integrated landslide susceptibility, corridor risk profiling and SAR/optical deformation mapping.</p>
+        </div>
+        <div class="card-foot"><a class="text-link" href="./products-services/#geohazard">Explore pillar →</a></div>
+      </article>
+      <article class="card-x tone-indigo">
+        <div>
+          <div class="card-head">
+            <div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
+            <span class="num-pill">Pillar 03</span>
+          </div>
+          <h3 class="h-card"><a href="./products-services/#climate">Climate Risk, Vulnerability &amp; ESG</a></h3>
+          <p class="small-text">SEBI BRSR Core and TCFD physical-risk scoring, CMIP6 projections and district vulnerability assessments.</p>
+        </div>
+        <div class="card-foot"><a class="text-link" href="./products-services/#climate">Explore pillar →</a></div>
+      </article>
+      <article class="card-x tone-emerald">
+        <div>
+          <div class="card-head">
+            <div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+            <span class="num-pill">Pillar 04</span>
+          </div>
+          <h3 class="h-card"><a href="./products-services/#gis">Remote Sensing, GIS &amp; Environmental Studies</a></h3>
+          <p class="small-text">Google Earth Engine monitoring, EIA and CAT plan spatial analytics, air and water pollution pathway studies.</p>
+        </div>
+        <div class="card-foot"><a class="text-link" href="./products-services/#gis">Explore pillar →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ APPROACH ============================ -->
+<section class="section topo-light" aria-labelledby="approach-title">
+  <div class="wrap">
+    <div class="split">
+      <div class="span-5 stack">
+        <span class="eyebrow">About CLIMASTRA</span>
+        <h2 id="approach-title" class="h-section">Bridging Earth-Science Research &amp; On-Ground Engineering</h2>
+        <p class="body-text">Environmental hazards rarely act in isolation. Cloudbursts trigger flash floods and slope failures; glacial lake expansion threatens downstream hydropower assets; rapid urban growth strains drainage and airsheds.</p>
+        <p class="body-text">Founded by earth-science and geospatial specialists, <strong>CLIMASTRA</strong> replaces generic advisory with validated physical equations, multi-sensor satellite observations, and defensible engineering deliverables.</p>
+        <p><a class="text-link" href="./about/">More about our approach →</a></p>
+      </div>
+      <div class="span-7 mt-m">
+        <div class="method"><div class="n c-teal">01</div><div><h3 class="h-small">Empirical &amp; Physical Rigor</h3><p class="small-text">Models anchored in calibrated hydro-meteorological datasets, full shallow-water equations and peer-reviewed geospatial methods — never opaque black-box estimates.</p></div></div>
+        <div class="method"><div class="n c-sky">02</div><div><h3 class="h-small">Decision-Ready Engineering Outputs</h3><p class="small-text">Standardized GIS layers, hydraulic cross-sections, early-warning thresholds and audit-ready technical annexes.</p></div></div>
+        <div class="method"><div class="n c-emerald">03</div><div><h3 class="h-small">Agile Sub-Consulting for DPRs &amp; Bids</h3><p class="small-text">Specialized 2D flood, GLOF and landslide chapters that slot into engineering consortia on tight tender timelines.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BRIEFS ============================ -->
+<section class="section section-white" aria-labelledby="briefs-title">
+  <div class="wrap">
+    <div class="split center">
+      <div class="span-8">
+        <span class="eyebrow">Resources &amp; Technical Briefs</span>
+        <h2 id="briefs-title" class="h-section">Applied Methodologies</h2>
+        <p class="lead">Technical workflows for high-resolution hydrodynamic routing, seismic-landslide zonation, and cloud-based satellite monitoring.</p>
+      </div>
+      <div class="span-4 mt-m"><a class="btnx btnx-outline" href="./resources/">View all resources →</a></div>
+    </div>
+    <div class="cgrid grid-md-3 mt-l">
+      <article class="brief">
+        <div>
+          <div class="brief-head g-sky">
+            <svg class="art" viewbox="0 0 300 140" fill="none" aria-hidden="true"><path d="M-10 110 C 60 80, 110 130, 180 70 C 230 30, 270 60, 310 20" stroke="#38BDF8" stroke-width="3"></path><path d="M-10 125 C 60 95, 110 145, 180 85 C 230 45, 270 75, 310 35" stroke="#2DD4BF" stroke-width="1.5" stroke-dasharray="4 4"></path></svg>
+            <span class="b-tag sky">HEC-RAS 2D • SWE-ELM</span>
+            <p class="b-loc">Upper Ganga Basin • Saraswati–Alaknanda</p>
+          </div>
+          <div class="brief-body">
+            <h3 class="h-small"><a href="./resources/glof-dam-break-hec-ras-2d/">2D Hydrodynamic GLOF &amp; Breach Routing in the Upper Ganga Basin</a></h3>
+            <p class="small-text">Unsteady 2D shallow-water simulation of moraine-dam breach hydrographs to quantify flood-wave arrival times, peak depths and downstream exposure.</p>
+          </div>
+        </div>
+        <div class="brief-foot"><a class="btnx btnx-navy btnx-sm btnx-block" href="./resources/glof-dam-break-hec-ras-2d/">Read Technical Brief</a></div>
+      </article>
+      <article class="brief">
+        <div>
+          <div class="brief-head g-teal">
+            <svg class="art" viewbox="0 0 300 140" fill="none" aria-hidden="true"><polygon points="30,130 100,35 165,130" stroke="#2DD4BF" stroke-width="2"></polygon><polygon points="120,130 205,25 280,130" stroke="#FBBF24" stroke-width="2"></polygon></svg>
+            <span class="b-tag teal">Seismic + Terrain ML</span>
+            <p class="b-loc">Indian Himalayan Highway &amp; Tunnel Corridors</p>
+          </div>
+          <div class="brief-body">
+            <h3 class="h-small"><a href="./resources/seismic-landslide-susceptibility-himalaya/">Seismic-Integrated Landslide Susceptibility Zonation for Himalayan Corridors</a></h3>
+            <p class="small-text">Coupling peak ground acceleration, lithology, slope morphometry and rainfall thresholds to prioritize slope stabilization.</p>
+          </div>
+        </div>
+        <div class="brief-foot"><a class="btnx btnx-navy btnx-sm btnx-block" href="./resources/seismic-landslide-susceptibility-himalaya/">Read Technical Brief</a></div>
+      </article>
+      <article class="brief">
+        <div>
+          <div class="brief-head g-indigo">
+            <svg class="art" viewbox="0 0 300 140" fill="none" aria-hidden="true"><circle cx="150" cy="70" r="45" stroke="#38BDF8" stroke-width="1.5"></circle><circle cx="150" cy="70" r="25" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="3 3"></circle><line x1="20" y1="70" x2="280" y2="70" stroke="#94A3B8" stroke-width="1"></line></svg>
+            <span class="b-tag indigo">Google Earth Engine • SAR</span>
+            <p class="b-loc">High-Altitude Cryosphere &amp; River Basins</p>
+          </div>
+          <div class="brief-body">
+            <h3 class="h-small"><a href="./resources/glacial-lake-monitoring-google-earth-engine/">Automated Decadal Glacial Lake &amp; Surface Water Tracking via GEE</a></h3>
+            <p class="small-text">Fusing Sentinel-1 SAR and Sentinel-2 optical data to track glacial lake expansion through cloud and terrain shadow.</p>
+          </div>
+        </div>
+        <div class="brief-foot"><a class="btnx btnx-navy btnx-sm btnx-block" href="./resources/glacial-lake-monitoring-google-earth-engine/">Read Technical Brief</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="section topo-light" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-band topo-bg">
+      <div class="glow glow-teal"></div>
+      <div style="position:relative">
+        <span class="eyebrow">Engage With CLIMASTRA</span>
+        <h2 id="cta-title" class="mt-s">Discuss a DPR, Climate Risk Study, or Tender Bid</h2>
+        <p>Reach our technical leadership for scoping, sub-consulting partnerships, or sample deliverables.</p>
+      </div>
+      <div class="btn-row" style="position:relative">
+        <a class="btnx btnx-teal" href="./contact/">Start a Conversation</a>
+        <a class="btnx btnx-ghost" href="./contact/?topic=capability-deck">Request Capability Deck</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <a href="./" aria-label="CLIMASTRA home"><img src="./image/logo-light.webp" alt="CLIMASTRA – Climate Strategy and Analytics" width="172" height="40" loading="lazy" decoding="async"></a>
+        <p>Climate Strategy and Analytics • Earth Science, Hydrodynamics &amp; Geospatial Intelligence</p>
+        <address class="addr"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span>F12-0118, Amrapali, Centurian Park, Tropical Garden, Tech Zone IV,<br>Greater Noida, Uttar Pradesh 201318, India</span></address>
+        <div class="social">
+        <a href="https://www.linkedin.com/company/climastra" target="_blank" rel="noopener" aria-label="CLIMASTRA on LinkedIn"><svg viewbox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg></a>
+        <a href="https://www.instagram.com/climastra.in" target="_blank" rel="noopener" aria-label="CLIMASTRA on Instagram"><svg viewbox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 0 0-2.13 1.38A5.86 5.86 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13a5.86 5.86 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.13-1.38 5.86 5.86 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"></path></svg></a>
+        <a href="https://www.facebook.com/climastra" target="_blank" rel="noopener" aria-label="CLIMASTRA on Facebook"><svg viewbox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"></path></svg></a>
+        <a href="https://x.com/climastra" target="_blank" rel="noopener" aria-label="CLIMASTRA on X"><svg viewbox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+        </div>
+      </div>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./about/">About</a>
+        <a href="./products-services/">Products &amp; Services</a>
+        <a href="./board-of-directors/">Leadership</a>
+        <a href="./resources/">Resources</a>
+        <a href="./careers/">Careers</a>
+        <a href="./contact/">Contact</a>
+      </nav>
+    </div>
+    <div class="bottom">
+      <p>© 2026 CLIMASTRA – Climate Strategy and Analytics. All rights reserved.</p>
+
+      <p class="legal-links"><a href="./privacy/">Privacy Policy</a><span aria-hidden="true">•</span><button type="button" class="link-btn" data-consent-open="">Cookie settings</button><span aria-hidden="true">•</span><span class="muted">climastra.in</span></p>
+    </div>
+  </div>
+</footer>
+<!-- Cookie / analytics consent (DPDP Act 2023). Shown until the visitor chooses. -->
+<div id="consent-banner" class="consent" role="dialog" aria-live="polite" aria-labelledby="consent-title" hidden="">
+  <div class="consent-inner">
+    <div>
+      <p id="consent-title" class="consent-title">Your privacy choice</p>
+      <p class="consent-text">We'd like to use Google Analytics (via Google Tag Manager) to understand how visitors use this site. It sets cookies and shares usage data, such as your IP address and pages visited, with Google. Nothing is collected unless you accept, and you can change your choice any time under "Cookie settings" in the footer. <a href="./privacy/">Read our Privacy Policy</a>.</p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" class="btnx btnx-ghost btnx-sm" data-consent="denied">Reject</button>
+      <button type="button" class="btnx btnx-teal btnx-sm" data-consent="granted">Accept analytics</button>
+    </div>
+  </div>
 </div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header> <div id="hero-heading">
-<p>CLIMASTRA – Climate Strategy and Analytics is a new Indian environmental consultancy dedicated to bringing innovative and science-based solutions to the modern changing environmental and climate concerns. The organization integrates expertise in hydrodynamic and hydraulic modeling, climate change assessment, pollution research, remote sensing and GIS, and environmental analysis to promote sustainable development and informed decision-making.</p>
-<p>CLIMASTRA is aware that environmental issues are increasingly interlinked. To address floods, water-resource restrictions, pollution, changing climate conditions, ecosystem stresses, and rapid urban growth, integrated approaches are required that combine scientific understanding with advanced analytical techniques. Thus, our work integrates environmental research, numerical modeling, geospatial technology, climate analytics, and data-driven methodologies.</p>
-<p>Our technical services include hydrodynamic and hydraulic modeling of rivers, drainage systems, floodplains, reservoirs, and urban and coastal environments; climate change studies, including climate risk, vulnerability, impact, and adaptation assessments; and pollution and environmental studies focusing on understanding environmental processes, pollutant pathways, impacts, and mitigation measures. We use remote sensing and GIS to deliver spatial analysis, environmental mapping, watershed and land-use assessments, monitoring, and decision support solutions.</p>
-<p>CLIMASTRA is a young and emerging consultancy, set up to be agile, collaborative, and innovation-oriented. We want to build solutions that are technically sound but practical, clear, and sensitive to the individual requirements of each project. Our approach emphasizes understanding the problem, selecting appropriate scientific and analytical methods, and translating complex environmental information into clear, actionable outcomes.</p>
-<p>CLIMASTRA aims to collaborate with government bodies, infrastructure and development organizations, industry, research institutes, academic bodies, and other stakeholders to address environmental hazards and build climate-resilient, sustainable systems.</p>
-<p>Our aim is to become the most trusted provider of climate, water, and environmental intelligence that helps organizations foresee risks, comprehend environmental change, and make smarter decisions for a more resilient and sustainable future.</p>
-<p style="text-align:center;">
-<em>CLIMASTRA - translating climate and environmental data into insight, strategy, and action.</em>
-</p>
-</div> 
-  </div>
-</div>
-
-
-
-
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
-<!-- Top and bottom bars.
-
-     Quarto can only inject HTML inside <main> or before the footer, so the
-
-     script below moves each bar to its proper place:
-
-     #top-bar    -> first child of the fixed header, above the navbar
-
-     #bottom-bar -> directly after the footer -->
-
-
-
-<div id="top-bar">
-
-  <!-- left zone -->
-
-  <div class="top-bar-left">
-
-    <span class="strip-item">
-
-      <i class="fa-solid fa-phone"></i>
-
-      <a href="tel:+910000000000">+91 00000 00000</a>
-
-    </span>
-
-  </div>
-
-
-
-  <!-- centre zone -->
-
-  <div class="top-bar-center">
-
-    Climate, water and environmental intelligence for a resilient future
-
-  </div>
-
-
-
-  <!-- right zone (empty for now; move items here to right-align them) -->
-
-  <div class="top-bar-right">
-
-    <span class="strip-item">
-
-      <i class="fa-solid fa-envelope"></i>
-
-      <a href="mailto:__@climastra.in">__@climastra.in</a>
-
-    </span>
-
-  </div>
-
-</div>
-
-
-
-<div id="bottom-bar">
-
-  <span></span>
-
-</div>
-
-
-
-<script>
-
-  (function () {
-
-    // The header already exists at this point, so move the top bar right away,
-
-    // before Quarto measures the header height for the page's top padding.
-
-    var header = document.getElementById("quarto-header");
-
-    var topBar = document.getElementById("top-bar");
-
-    if (header && topBar) {
-
-      header.insertBefore(topBar, header.firstChild);
-
-    }
-
-
-
-    // The footer comes later in the page, so wait until it has been parsed.
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-      var footer = document.querySelector("footer.footer");
-
-      var bottomBar = document.getElementById("bottom-bar");
-
-      if (footer && bottomBar) {
-
-        footer.insertAdjacentElement("afterend", bottomBar);
-
-      }
-
-      // Ask Quarto to recompute the header offset now that the header is taller.
-
-      window.dispatchEvent(new Event("resize"));
-
-    });
-
-  })();
-
-</script>
-
+<script src="./assets/site.js" defer=""></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
@@ -374,6 +630,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -688,19 +949,6 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>© 2026 CLIMASTRA</p>
-</div>   
-    <div class="nav-footer-center">
-<p><a class="link-dark me-1" href="https://linkedin.com/company/climastra" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin fa-2xl" aria-label="linkedin"></i></a> <a class="link-dark me-1" href="https://www.instagram.com/climastra.in" title="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram fa-2xl" aria-label="instagram"></i></a> <a class="link-dark me-1" href="https://www.facebook.com/climastra" title="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook fa-2xl" aria-label="facebook"></i></a></p>
-</div>
-    <div class="nav-footer-right">
-<p>Registered Address:</p>
-</div>
-  </div>
-</footer>
 
 
 
