@@ -60,7 +60,7 @@
 (function () {
   // ---- Products & Services: area-of-expertise filter tabs ----------------------------
   var filters = document.querySelectorAll(".filter-btn");
-  var cards = document.querySelectorAll("[data-category]");
+  var cards = document.querySelectorAll(".expertise-cards [data-category]");
   function applyFilter(f) {
     filters.forEach(function (b) {
       var on = b.getAttribute("data-filter") === f;
@@ -75,16 +75,20 @@
     b.addEventListener("click", function () { applyFilter(b.getAttribute("data-filter")); });
   });
   // Deep links like /products-services/#geohazard show that area of expertise
-  if (filters.length && location.hash) {
+  function filterFromHash() {
     var h = location.hash.slice(1);
+    if (!filters.length || !h) return;
     var match = document.querySelector('.filter-btn[data-filter="' + h + '"]');
-    if (match) applyFilter(h);
+    applyFilter(match ? h : "all");   // e.g. #gis (foundation band): show everything
+    var target = document.getElementById(h);
+    if (target) target.scrollIntoView();
   }
+  filterFromHash();
+  window.addEventListener("hashchange", filterFromHash);
 
   // ---- Contact form ---------------------------------------------------------
-  // GitHub Pages has no server, so the form opens the visitor's email app with
-  // the enquiry filled in. To receive submissions without email apps, point
-  // the form's data-endpoint at a form service (e.g. Formspree) — see README.
+  // Sent to Formspree (data-endpoint) in the background. Without an endpoint,
+  // the form falls back to opening the visitor's email app (data-mailto).
   var form = document.getElementById("contact-form");
   if (!form) return;
   var params = new URLSearchParams(location.search);
@@ -98,7 +102,7 @@
   var subjectField = form.querySelector("[name=subject]");
   if (topic && topics[topic] && subjectField) subjectField.value = topics[topic];
   var brief = params.get("brief");
-  var scope = form.querySelector("[name=scope]");
+  var scope = form.querySelector("[name=message]");
   if (brief && scope && !scope.value) scope.value = "Regarding the brief: " + brief + "\n\n";
 
   form.addEventListener("submit", function (e) {
@@ -111,21 +115,34 @@
     var body =
       "Name: " + d.get("name") + "\n" +
       "Email: " + d.get("email") + "\n" +
-      "Organisation type: " + d.get("orgtype") + "\n" +
-      "Service area: " + d.get("pillar") + "\n\n" +
-      d.get("scope");
+      "Organisation type: " + d.get("organisation_type") + "\n" +
+      "Service area: " + d.get("service_area") + "\n\n" +
+      d.get("message");
     if (endpoint) {
+      var btn = form.querySelector("[type=submit]");
+      var label = btn ? btn.textContent : "";
+      var failMsg = "Sorry, your enquiry could not be sent. Please email us at <a href=\"mailto:" + to +
+        "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body) + "\">" + to + "</a>.";
+      d.set("_subject", subject);   // email subject in Formspree
+      d.set("_replyto", d.get("email"));
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
       fetch(endpoint, { method: "POST", body: d, headers: { Accept: "application/json" } })
         .then(function (r) {
-          fb.innerHTML = r.ok
-            ? "<strong>Thank you.</strong> Your enquiry has been sent to the CLIMASTRA team."
-            : "Sorry, sending failed. Please email us at <a href=\"mailto:" + to + "\">" + to + "</a>.";
-          fb.hidden = false;
-          if (r.ok) form.reset();
+          if (r.ok) {
+            fb.innerHTML = "<strong>Thank you.</strong> Your enquiry has reached the CLIMASTRA team. We'll reply to " +
+              String(d.get("email")).replace(/[<>&"]/g, "") + " shortly.";
+            form.reset();
+            return;
+          }
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            var detail = j && j.errors && j.errors.length ? " (" + j.errors.map(function (e) { return e.message; }).join("; ").replace(/[<>&"]/g, "") + ")" : "";
+            fb.innerHTML = failMsg + detail;
+          });
         })
-        .catch(function () {
-          fb.innerHTML = "Sorry, sending failed. Please email us at <a href=\"mailto:" + to + "\">" + to + "</a>.";
+        .catch(function () { fb.innerHTML = failMsg; })
+        .then(function () {
           fb.hidden = false;
+          if (btn) { btn.disabled = false; btn.textContent = label; }
         });
       return;
     }
