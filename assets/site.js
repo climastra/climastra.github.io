@@ -87,9 +87,10 @@
   window.addEventListener("hashchange", filterFromHash);
 
   // ---- Forms (Contact enquiry, Careers application) -------------------------
-  // Each <form class="js-form"> is sent to Formspree (data-endpoint) in the
-  // background. If that fails, the visitor gets an email link (data-mailto)
-  // with everything filled in. data-kind picks the subject line and wording.
+  // Each <form class="js-form"> is sent to Un-static in the background, with a
+  // Cloudflare Turnstile check (settings in _data/forms.yml). If that fails, the
+  // visitor gets an email link (data-mailto) with everything filled in.
+  // data-kind picks the subject line and wording.
   var params = new URLSearchParams(location.search);
   var contact = document.getElementById("contact-form");
   if (contact) {
@@ -123,48 +124,97 @@
   };
   function clean(v) { return String(v == null ? "" : v).replace(/[<>&"]/g, ""); }
 
+  // Settings for each form come from the hidden marker printed just before it by
+  // the form-switch shortcode (_data/forms.yml): Un-static address + Turnstile key.
+  function settingsFor(form) {
+    var el = form.previousElementSibling;
+    while (el && !(el.classList && el.classList.contains("form-switch"))) el = el.previousElementSibling;
+    return el ? { endpoint: el.getAttribute("data-endpoint") || "", sitekey: el.getAttribute("data-sitekey") || "" } : { endpoint: "", sitekey: "" };
+  }
+
+  // Cloudflare Turnstile (spam protection), loaded only on pages with a live form
+  var tsQueue = [], tsLoading = false;
+  function withTurnstile(cb) {
+    if (window.turnstile) return cb(window.turnstile);
+    tsQueue.push(cb);
+    if (tsLoading) return;
+    tsLoading = true;
+    window.climastraTurnstileReady = function () { tsQueue.splice(0).forEach(function (f) { f(window.turnstile); }); };
+    var sc = document.createElement("script");
+    sc.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=climastraTurnstileReady";
+    sc.async = true; sc.defer = true;
+    document.head.appendChild(sc);
+  }
+
   document.querySelectorAll("form.js-form").forEach(function (form) {
     var kind = KINDS[form.getAttribute("data-kind")] || KINDS.enquiry;
+    var cfg = settingsFor(form);
+    if (cfg.endpoint) form.setAttribute("action", cfg.endpoint);
+    var widget = null;
+    if (cfg.endpoint && cfg.sitekey) {
+      var box = document.createElement("div");
+      box.className = "ts-box";
+      var row = form.querySelector(".form-row");
+      form.insertBefore(box, row);
+      withTurnstile(function (ts) {
+        widget = ts.render(box, { sitekey: cfg.sitekey, theme: "dark", size: "flexible" });
+      });
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var d = new FormData(form);
       var to = form.getAttribute("data-mailto");
-      var endpoint = form.getAttribute("data-endpoint");
       var fb = form.querySelector(".form-feedback");
       var subject = kind.subject(d);
       var body = kind.fields.map(function (f) { return f[0] + ": " + (d.get(f[1]) || "—"); }).join("\n") +
         "\n\n" + (d.get("message") || "");
       var mailto = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      if (endpoint) {
-        var btn = form.querySelector("[type=submit]");
-        var label = btn ? btn.textContent : "";
-        var failMsg = "Sorry, your " + kind.noun + " could not be sent. Please email us at <a href=\"" + mailto + "\">" + to + "</a>.";
-        d.set("_subject", subject);   // email subject in Formspree
-        d.set("_replyto", d.get("email"));
-        if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
-        fetch(endpoint, { method: "POST", body: d, headers: { Accept: "application/json" } })
-          .then(function (r) {
-            if (r.ok) {
-              fb.innerHTML = "<strong>Thank you.</strong> " + kind.thanks + clean(d.get("email")) + ".";
-              form.reset();
-              return;
-            }
-            return r.json().catch(function () { return {}; }).then(function (j) {
-              var detail = j && j.errors && j.errors.length ? " (" + clean(j.errors.map(function (x) { return x.message; }).join("; ")) + ")" : "";
-              fb.innerHTML = failMsg + detail;
-            });
-          })
-          .catch(function () { fb.innerHTML = failMsg; })
-          .then(function () {
-            fb.hidden = false;
-            if (btn) { btn.disabled = false; btn.textContent = label; }
-          });
+
+      if (!cfg.endpoint) {   // no form service configured: open the visitor's email app
+        window.location.href = mailto;
+        fb.innerHTML = "<strong>Your email app should now open</strong> with your " + kind.noun + " filled in. Just press send. " +
+          "If nothing opened, write to us directly at <a href=\"mailto:" + to + "\">" + to + "</a>.";
+        fb.hidden = false;
         return;
       }
-      window.location.href = mailto;
-      fb.innerHTML = "<strong>Your email app should now open</strong> with your " + kind.noun + " filled in. Just press send. " +
-        "If nothing opened, write to us directly at <a href=\"mailto:" + to + "\">" + to + "</a>.";
-      fb.hidden = false;
+      if (cfg.sitekey && !d.get("cf-turnstile-response")) {
+        fb.innerHTML = "Please complete the security check just above the button, then send again.";
+        fb.hidden = false;
+        return;
+      }
+
+      // Un-static AJAX endpoint expects JSON at <form address>/ajax
+      var payload = {};
+      d.forEach(function (v, k) { if (typeof v === "string") payload[k] = v; });
+      payload.subject = subject;
+      var btn = form.querySelector("[type=submit]");
+      var label = btn ? btn.textContent : "";
+      var failMsg = "Sorry, your " + kind.noun + " could not be sent. Please email us at <a href=\"" + mailto + "\">" + to + "</a>.";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      fetch(cfg.endpoint.replace(/\/$/, "") + "/ajax", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) {
+          if (r.ok) {
+            fb.innerHTML = "<strong>Thank you.</strong> " + kind.thanks + clean(d.get("email")) + ".";
+            form.reset();
+            return;
+          }
+          return r.text().then(function (t) {
+            var detail = "";
+            try { var j = JSON.parse(t); detail = j.message || j.error || (j.errors && j.errors.join ? j.errors.join("; ") : ""); } catch (err) {}
+            fb.innerHTML = failMsg + (detail ? " (" + clean(detail) + ")" : "");
+          });
+        })
+        .catch(function () { fb.innerHTML = failMsg; })
+        .then(function () {
+          fb.hidden = false;
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          if (widget !== null && window.turnstile) window.turnstile.reset(widget);   // tokens are single-use
+        });
     });
   });
 })();

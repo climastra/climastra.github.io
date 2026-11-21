@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63e2e98e5f0a71a9a4e33a4ce566497c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-92245267fe328b61a164c4c4449ab4c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-946801bc9cffdc33ca6b01f229578b82.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -269,15 +269,11 @@ ul.task-list li input[type="checkbox"] {
       </div>
 
       <div class="contact-form">
-        <!-- Submissions go to Formspree (data-endpoint), which emails them to the
-             address set in the Formspree dashboard. If Formspree is unreachable,
-             the visitor is offered contact@climastra.in instead (data-mailto). -->
-<div class="form-switch is-closed" data-form="contact">
-<div class="form-closed" role="status"><p class="fc-title">Our contact form is paused</p>
-<p>We’re not taking enquiries through this form at the moment. You can still email us at <a href="mailto:contact@climastra.in">contact@climastra.in</a>.</p></div></div>
-        <form id="contact-form" class="js-form" data-kind="enquiry" action="https://formspree.io/f/xvkawopl" method="POST" data-endpoint="https://formspree.io/f/xvkawopl" data-mailto="contact@climastra.in">
-          <!-- Spam trap: hidden from people, bots fill it in and Formspree discards the message -->
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <!-- Sent to Un-static; the form address, on/off switch and Turnstile key
+             are in _data/forms.yml. If sending fails, the visitor is offered
+             contact@climastra.in instead (data-mailto). -->
+<div class="form-switch" data-form="contact" data-endpoint="https://forms.un-static.com/forms/de7befc65c5884ebfa7cea066ec8bbcfb1b17b48" data-sitekey="0x4AAAAAAGMScJOJtYjyU8oo" hidden=""></div>
+        <form id="contact-form" class="js-form" data-kind="enquiry" method="post" data-mailto="contact@climastra.in">
           <div class="form-grid two">
             <div class="field"><label for="f-name">Full Name *</label><input id="f-name" name="name" type="text" required="" autocomplete="name" placeholder="Dr. / Er. / Name"></div>
             <div class="field"><label for="f-email">Work Email *</label><input id="f-email" name="email" type="email" required="" autocomplete="email" placeholder="name@organization.in"></div>
@@ -309,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="field" style="margin-top:1.25rem"><label for="f-scope">Tell us about the project *</label>
             <textarea id="f-scope" name="message" rows="4" required="" placeholder="Where is it, what do you need (for example flood maps, a landslide study or a GHG inventory), and when is it due?"></textarea></div>
           <div class="form-row" style="margin-top:1.25rem">
-            <p>Your enquiry is sent securely to the CLIMASTRA team through our form provider, Formspree. We use your details only to respond to you. See our <a href="../privacy/" style="color:#C3E6B7;text-decoration:underline">Privacy Policy</a>.</p>
+            <p>Your enquiry is sent securely to the CLIMASTRA team through our form provider, Un-static. We use your details only to respond to you. See our <a href="../privacy/" style="color:#C3E6B7;text-decoration:underline">Privacy Policy</a>.</p>
             <button type="submit" class="btnx btnx-teal">Send Enquiry</button>
           </div>
           <div id="form-feedback" class="form-feedback" role="status" hidden=""></div>
