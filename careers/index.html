@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63e2e98e5f0a71a9a4e33a4ce566497c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e6e3e08424f9186913dfc917aaba2316.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-92245267fe328b61a164c4c4449ab4c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -239,6 +239,7 @@ ul.task-list li input[type="checkbox"] {
     <span class="eyebrow">Careers</span>
     <h1 id="page-title" class="h-page mt-s">Join Our Team</h1>
     <p class="lead-dark">We're building a team of scientists and analysts who want their work to inform real infrastructure and climate decisions.</p>
+    <div class="btn-row mt-m"><a class="btnx btnx-teal btnx-lg" href="#apply">Express Interest</a></div>
   </div>
 </section>
 
@@ -249,33 +250,110 @@ ul.task-list li input[type="checkbox"] {
       <h2 id="areas-title" class="h-section">Disciplines we're building</h2>
       <p class="lead">There are no open positions listed yet. We'd still like to hear from people with strong skills in these areas, and from students interested in internships or thesis projects.</p>
     </div>
-    <div class="cgrid grid-md-3 mt-l">
-      <article class="card-x tone-sky">
-        <div>
-          <div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg></div></div>
-          <h3 class="h-card">Hydrodynamic &amp; Hydraulic Modeling</h3>
-          <ul class="checks"><li><span>HEC-RAS 1D/2D, dam-break and floodplain studies</span></li><li><span>Hydrology, rainfall-runoff and hydraulic design</span></li></ul>
-        </div>
-      </article>
-      <article class="card-x tone-emerald">
-        <div>
-          <div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div></div>
-          <h3 class="h-card">Remote Sensing &amp; GIS</h3>
-          <ul class="checks"><li><span>Google Earth Engine, SAR and optical analysis</span></li><li><span>QGIS / ArcGIS Pro cartography and spatial databases</span></li></ul>
-        </div>
-      </article>
-      <article class="card-x tone-indigo">
-        <div>
-          <div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div></div>
-          <h3 class="h-card">Climate &amp; Environmental Data Science</h3>
-          <ul class="checks"><li><span>CMIP6 downscaling, extremes and risk scoring in Python</span></li><li><span>Air and water quality, pollution pathway analysis</span></li></ul>
-        </div>
-      </article>
+    <!-- Discipline cards come from _data/expertise.yml (one per area of expertise) -->
+<div class="cgrid grid-md-2 grid-lg-3 mt-l">
+<article class="card-x tone-sky"><div>
+<div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5s-6.5 7-6.5 11.5a6.5 6.5 0 0013 0C18.5 10.5 12 3.5 12 3.5z"></path><path stroke-linecap="round" d="M9 15.5a3 3 0 003 3"></path></svg></div><span class="num-pill">01</span></div>
+<h3 class="h-card">Hydrology, Hydrodynamics &amp; Flood Risk</h3>
+<ul class="checks"><li><span>Hydrological modeling</span></li><li><span>Flood hazard mapping</span></li><li><span>Dam-break &amp; urban drainage studies</span></li></ul></div></article>
+<article class="card-x tone-emerald"><div>
+<div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7c1.5 0 2-1.5 4.5-1.5S10.5 7 12 7s2-1.5 4.5-1.5S19.5 7 21 7M3 12.5c1.5 0 2-1.5 4.5-1.5s3 1.5 4.5 1.5 2-1.5 4.5-1.5 3 1.5 4.5 1.5M3 18c1.5 0 2-1.5 4.5-1.5S10.5 18 12 18s2-1.5 4.5-1.5S19.5 18 21 18"></path></svg></div><span class="num-pill">02</span></div>
+<h3 class="h-card">River Morphology &amp; Sediment Studies</h3>
+<ul class="checks"><li><span>Channel migration &amp; bank erosion</span></li><li><span>Sediment transport &amp; reservoir sedimentation</span></li><li><span>Morphological inputs for river structures</span></li></ul></div></article>
+<article class="card-x tone-indigo"><div>
+<div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18L14 7l-4 7-3-4-4 10z"></path></svg></div><span class="num-pill">03</span></div>
+<h3 class="h-card">Geohazards &amp; Mountain Risk</h3>
+<ul class="checks"><li><span>Landslide susceptibility &amp; hazard zonation</span></li><li><span>Slope stability assessment</span></li><li><span>GLOF hazard assessment</span></li></ul></div></article>
+<article class="card-x tone-teal"><div>
+<div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 14.76V5a2 2 0 10-4 0v9.76a4 4 0 104 0zM12 9v7"></path><path stroke-linecap="round" d="M18 5h3M18 9h3"></path></svg></div><span class="num-pill">04</span></div>
+<h3 class="h-card">Climate &amp; Air Quality</h3>
+<ul class="checks"><li><span>Climate risk &amp; vulnerability assessments</span></li><li><span>Heat &amp; extreme-weather analysis</span></li><li><span>Air-quality assessment &amp; clean-air planning</span></li></ul></div></article>
+<article class="card-x tone-sky"><div>
+<div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21V11l5 3v-3l5 3V8h3l1-4h2l1 4v13H3zM7 18h2M12 18h2"></path></svg></div><span class="num-pill">05</span></div>
+<h3 class="h-card">Emissions &amp; Net-Zero Pathways</h3>
+<ul class="checks"><li><span>GHG inventories</span></li><li><span>Sectoral baselines &amp; scenarios</span></li><li><span>Net-zero pathway analysis</span></li></ul></div></article>
+<article class="card-x tone-emerald"><div>
+<div class="card-head"><div class="icon-tile"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 20c0-8.5 5.5-15 15-15 0 9.5-6.5 15-15 15zM5 20l8-8"></path></svg></div><span class="num-pill">06</span></div>
+<h3 class="h-card">Environmental &amp; ESG Studies</h3>
+<ul class="checks"><li><span>Specialist environmental studies</span></li><li><span>Catchment Area Treatment planning</span></li><li><span>Physical climate-risk scoring</span></li></ul></div></article>
+</div>
+    <div class="others-band">
+      <div class="ob-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg></div>
+      <div>
+        <h3 class="ob-title">Others</h3>
+        <p class="small-text">Working in a related field? We'd also like to hear from people in remote sensing and GIS, field surveying, data science and software, environmental engineering, ecology, and climate policy.</p>
+      </div>
+      <a class="btnx btnx-navy" href="#apply">Express Interest</a>
     </div>
-    <div class="empty mt-l">
-      <h2 class="h-card">Send us your CV</h2>
-      <p>Tell us which discipline interests you and include a short note on a project you're proud of. We'll keep your details on file and get in touch when a role opens.</p>
-      <div class="btn-row"><a class="btnx btnx-navy" href="../contact/?topic=careers">Express Interest</a></div>
+  </div>
+</section>
+
+<!-- ============================ APPLY ============================ -->
+<!-- The form posts to the same Formspree form as Contact; emails arrive with a
+     subject starting "Careers:". CVs are shared as links (Formspree's free plan
+     has no file uploads); applicants can also email a PDF. -->
+<section class="section topo-light" id="apply" aria-labelledby="apply-title">
+  <div class="wrap">
+    <div class="contact-shell">
+      <div class="contact-info">
+        <div>
+          <span class="eyebrow">Express Interest</span>
+          <h2 id="apply-title">Send us your CV</h2>
+          <p class="intro">Tell us which discipline interests you and share a short note on a project you're proud of. We'll keep your details on file and get in touch when a suitable role, internship or thesis project opens.</p>
+          <div class="c-list">
+            <div class="c-item"><div class="c-ico"><svg class="c-teal" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div>
+              <div><p class="k">Your CV</p><p class="v">Share a link (Google Drive, OneDrive, LinkedIn or a personal site)</p></div></div>
+            <div class="c-item"><div class="c-ico"><svg class="c-teal" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+              <div><p class="k">Prefer to send a file?</p><a class="v" href="mailto:contact@climastra.in?subject=Careers%3A%20CV">Email your CV to contact@climastra.in</a></div></div>
+          </div>
+        </div>
+        <div class="reg">We keep CVs for up to 12 months, only with your consent, and delete them sooner if you ask. See our <a href="../privacy/" style="color:#C3E6B7;text-decoration:underline">Privacy Policy</a>.</div>
+      </div>
+
+      <div class="contact-form">
+<div class="form-switch is-closed" data-form="careers">
+<div class="form-closed" role="status"><p class="fc-title">We’re not accepting applications right now</p>
+<p>Thank you for your interest in CLIMASTRA. Please check back later, or follow us on LinkedIn to hear when roles open.</p></div></div>
+        <form id="careers-form" class="js-form" action="https://formspree.io/f/xvkawopl" method="POST" data-endpoint="https://formspree.io/f/xvkawopl" data-mailto="contact@climastra.in" data-kind="careers">
+          <input type="hidden" name="form" value="Careers">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="form-grid two">
+            <div class="field"><label for="c-name">Full Name *</label><input id="c-name" name="name" type="text" required="" autocomplete="name"></div>
+            <div class="field"><label for="c-email">Email *</label><input id="c-email" name="email" type="email" required="" autocomplete="email"></div>
+          </div>
+          <div class="form-grid two">
+            <div class="field"><label for="c-discipline">Discipline</label>
+              <select id="c-discipline" name="discipline">
+<option>Hydrology, Hydrodynamics &amp; Flood Risk</option>
+<option>River Morphology &amp; Sediment Studies</option>
+<option>Geohazards &amp; Mountain Risk</option>
+<option>Climate &amp; Air Quality</option>
+<option>Emissions &amp; Net-Zero Pathways</option>
+<option>Environmental &amp; ESG Studies</option>
+<option>Remote Sensing &amp; GIS</option>
+<option>Other</option>
+              </select></div>
+            <div class="field"><label for="c-type">Looking for</label>
+              <select id="c-type" name="opportunity">
+                <option>Full-time role</option>
+                <option>Internship</option>
+                <option>Thesis or research project</option>
+                <option>Not sure yet</option>
+              </select></div>
+          </div>
+          <div class="field" style="margin-top:1.25rem"><label for="c-cv">Link to your CV or portfolio</label>
+            <input id="c-cv" name="cv_link" type="url" inputmode="url" placeholder="https://"></div>
+          <div class="field" style="margin-top:1.25rem"><label for="c-note">A project you're proud of *</label>
+            <textarea id="c-note" name="message" rows="4" required="" placeholder="What was it, what did you do, and what tools did you use?"></textarea></div>
+          <label class="consent-check"><input type="checkbox" name="consent" value="Yes: may keep my details and CV for up to 12 months" required="">
+            <span>I agree that CLIMASTRA may keep my details and CV for up to 12 months to consider me for roles. I can ask for them to be deleted at any time. *</span></label>
+          <div class="form-row" style="margin-top:1.25rem">
+            <p>Sent securely to the CLIMASTRA team through our form provider, Formspree.</p>
+            <button type="submit" class="btnx btnx-teal">Send Application</button>
+          </div>
+          <div class="form-feedback" role="status" hidden=""></div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
