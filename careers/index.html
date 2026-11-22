@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63e2e98e5f0a71a9a4e33a4ce566497c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-946801bc9cffdc33ca6b01f229578b82.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3e1f7136898866cca170e40b4980f35e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -289,9 +289,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 <!-- ============================ APPLY ============================ -->
-<!-- The form is sent to its own Un-static form (address and on/off switch in
-     _data/forms.yml). CVs are shared as links (file uploads need a paid plan);
-     applicants can also email a PDF. -->
+<!-- Sent to CLIMASTRA's own form relay (Cloudflare Worker → Resend); settings in
+     _data/forms.yml, Worker code in _worker/. CVs can be uploaded (PDF/Word,
+     2 MB) or shared as a link; applicants can also email a file. -->
 <section class="section topo-light" id="apply" aria-labelledby="apply-title">
   <div class="wrap">
     <div class="contact-shell">
@@ -302,17 +302,19 @@ ul.task-list li input[type="checkbox"] {
           <p class="intro">Tell us which discipline interests you and share a short note on a project you're proud of. We'll keep your details on file and get in touch when a suitable role, internship or thesis project opens.</p>
           <div class="c-list">
             <div class="c-item"><div class="c-ico"><svg class="c-teal" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div>
-              <div><p class="k">Your CV</p><p class="v">Share a link (Google Drive, OneDrive, LinkedIn or a personal site)</p></div></div>
+              <div><p class="k">Your CV</p><p class="v">Upload a PDF or Word file (up to 2 MB), or share a link</p></div></div>
             <div class="c-item"><div class="c-ico"><svg class="c-teal" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
-              <div><p class="k">Prefer to send a file?</p><a class="v" href="mailto:contact@climastra.in?subject=Careers%3A%20CV">Email your CV to contact@climastra.in</a></div></div>
+              <div><p class="k">Prefer email?</p><a class="v" href="mailto:contact@climastra.in?subject=Careers%3A%20CV">Email your CV to contact@climastra.in</a></div></div>
           </div>
         </div>
         <div class="reg">We keep CVs for up to 12 months, only with your consent, and delete them sooner if you ask. See our <a href="../privacy/" style="color:#C3E6B7;text-decoration:underline">Privacy Policy</a>.</div>
       </div>
 
       <div class="contact-form">
-<div class="form-switch" data-form="careers" data-endpoint="https://forms.un-static.com/forms/90f5845c29ea6d0ee0d0921d033a4dbd8f9380c9" data-sitekey="0x4AAAAAAGMScJOJtYjyU8oo" hidden=""></div>
-        <form id="careers-form" class="js-form" method="post" data-mailto="contact@climastra.in" data-kind="careers">
+<div class="form-switch" data-form="careers" data-endpoint="https://climastra-forms.climastra.workers.dev/careers" data-sitekey="0x4AAAAAAGMScJOJtYjyU8oo" hidden=""></div>
+        <form id="careers-form" class="js-form" method="post" enctype="multipart/form-data" data-mailto="contact@climastra.in" data-kind="careers">
+          <!-- Spam trap: hidden from people; the Worker ignores submissions that fill it in -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="form-grid two">
             <div class="field"><label for="c-name">Full Name *</label><input id="c-name" name="name" type="text" required="" autocomplete="name"></div>
             <div class="field"><label for="c-email">Email *</label><input id="c-email" name="email" type="email" required="" autocomplete="email"></div>
@@ -337,14 +339,18 @@ ul.task-list li input[type="checkbox"] {
                 <option>Not sure yet</option>
               </select></div>
           </div>
-          <div class="field" style="margin-top:1.25rem"><label for="c-cv">Link to your CV or portfolio</label>
-            <input id="c-cv" name="cv_link" type="url" inputmode="url" placeholder="https://"></div>
+          <div class="form-grid two">
+            <div class="field"><label for="c-file">Upload your CV (PDF or Word, max 2 MB)</label>
+              <input id="c-file" name="cv_file" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></div>
+            <div class="field"><label for="c-cv">Or a link to your CV / portfolio</label>
+              <input id="c-cv" name="cv_link" type="url" inputmode="url" placeholder="https://"></div>
+          </div>
           <div class="field" style="margin-top:1.25rem"><label for="c-note">A project you're proud of *</label>
             <textarea id="c-note" name="message" rows="4" required="" placeholder="What was it, what did you do, and what tools did you use?"></textarea></div>
           <label class="consent-check"><input type="checkbox" name="consent" value="Yes: may keep my details and CV for up to 12 months" required="">
             <span>I agree that CLIMASTRA may keep my details and CV for up to 12 months to consider me for roles. I can ask for them to be deleted at any time. *</span></label>
           <div class="form-row" style="margin-top:1.25rem">
-            <p>Sent securely to the CLIMASTRA team through our form provider, Un-static.</p>
+            <p>Sent securely and directly to the CLIMASTRA team.</p>
             <button type="submit" class="btnx btnx-teal">Send Application</button>
           </div>
           <div class="form-feedback" role="status" hidden=""></div>

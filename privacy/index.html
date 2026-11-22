@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63e2e98e5f0a71a9a4e33a4ce566497c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-946801bc9cffdc33ca6b01f229578b82.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3e1f7136898866cca170e40b4980f35e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -292,7 +292,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 
     </div>
-    <p>When you submit the contact or careers form, it is sent to our form provider, Un-static, which forwards it to us by email and deletes its own copy after 30 days. Before sending, a Cloudflare Turnstile security check confirms you are a person and not a spam bot. If you write to us directly instead, your message reaches us as an ordinary email.</p>
+    <p>When you submit the contact or careers form, it goes to our own small form service, which runs on Cloudflare and stores nothing. It checks the submission and emails it to us through our email delivery provider, Resend, including any CV file you attach. Before sending, a Cloudflare Turnstile security check confirms you are a person and not a spam bot. If you write to us directly instead, your message reaches us as an ordinary email.</p>
 
     <h2>3. Cookies and analytics</h2>
     <p>We use Google Analytics through Google Tag Manager <strong>only if you click "Accept analytics"</strong>. Until then, no analytics script is loaded and no analytics cookies are set. If you reject, nothing is collected.</p>
@@ -331,8 +331,8 @@ ul.task-list li input[type="checkbox"] {
     <ul>
       <li><strong>Google LLC</strong> (Google Analytics and Google Tag Manager), only if you accept analytics. Google may process this data outside India. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
       <li><strong>GitHub, Inc.</strong>, which hosts this website (GitHub Pages) and logs visitor IP addresses for security. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's Privacy Statement</a>.</li>
-      <li><strong>Un-static</strong>, which receives contact and careers form submissions and forwards them to us by email. Un-static hosts its service in Germany and deletes submissions after 30 days. See <a href="https://un-static.com/" target="_blank" rel="noopener">Un-static</a>.</li>
-      <li><strong>Cloudflare, Inc.</strong> (Turnstile), which runs a security check on our forms to block spam bots. It processes technical signals from your browser, such as your IP address, only to tell people from bots, and is not used for advertising. See <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Cloudflare's Turnstile privacy addendum</a>.</li>
+      <li><strong>Resend</strong>, which delivers form submissions to our inbox by email, with any CV attached. Resend keeps a log of sent emails for up to 30 days. See <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">Resend's Privacy Policy</a>.</li>
+      <li><strong>Cloudflare, Inc.</strong>, which runs our form service (Cloudflare Workers, without storing submissions) and the Turnstile security check that blocks spam bots. It processes technical signals from your browser, such as your IP address, only to tell people from bots, and is not used for advertising. See <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Cloudflare's Turnstile privacy addendum</a>.</li>
       <li><strong>Our email service provider</strong>, which stores the emails you send us.</li>
     </ul>
     <p>We may also disclose data where Indian law requires it. Any transfer outside India follows the conditions the Government of India sets under the DPDP Act.</p>

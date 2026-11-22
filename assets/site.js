@@ -87,8 +87,9 @@
   window.addEventListener("hashchange", filterFromHash);
 
   // ---- Forms (Contact enquiry, Careers application) -------------------------
-  // Each <form class="js-form"> is sent to Un-static in the background, with a
-  // Cloudflare Turnstile check (settings in _data/forms.yml). If that fails, the
+  // Each <form class="js-form"> is sent in the background to CLIMASTRA's own form
+  // relay (Cloudflare Worker → Resend, code in _worker/), with a Cloudflare
+  // Turnstile check (settings in _data/forms.yml). If that fails, the
   // visitor gets an email link (data-mailto) with everything filled in.
   // data-kind picks the subject line and wording.
   var params = new URLSearchParams(location.search);
@@ -125,7 +126,7 @@
   function clean(v) { return String(v == null ? "" : v).replace(/[<>&"]/g, ""); }
 
   // Settings for each form come from the hidden marker printed just before it by
-  // the form-switch shortcode (_data/forms.yml): Un-static address + Turnstile key.
+  // the form-switch shortcode (_data/forms.yml): Worker address + Turnstile key.
   function settingsFor(form) {
     var el = form.previousElementSibling;
     while (el && !(el.classList && el.classList.contains("form-switch"))) el = el.previousElementSibling;
@@ -151,6 +152,10 @@
     var cfg = settingsFor(form);
     if (cfg.endpoint) form.setAttribute("action", cfg.endpoint);
     var widget = null;
+    if (!cfg.endpoint) {   // email fallback can't carry files: hide the CV upload
+      var up = form.querySelector('input[type=file]');
+      if (up && up.closest(".field")) up.closest(".field").remove();
+    }
     if (cfg.endpoint && cfg.sitekey) {
       var box = document.createElement("div");
       box.className = "ts-box";
@@ -184,29 +189,28 @@
         return;
       }
 
-      // Un-static AJAX endpoint expects JSON at <form address>/ajax
-      var payload = {};
-      d.forEach(function (v, k) { if (typeof v === "string") payload[k] = v; });
-      payload.subject = subject;
+      // Optional CV file: check type and size before sending
+      var cv = d.get("cv_file");
+      if (cv && typeof cv === "object") {
+        if (!cv.size) d.delete("cv_file");
+        else if (!/\.(pdf|docx?)$/i.test(cv.name)) { fb.innerHTML = "Your CV must be a PDF or Word file."; fb.hidden = false; return; }
+        else if (cv.size > 2 * 1024 * 1024) { fb.innerHTML = "Your CV file is larger than 2 MB. Please upload a smaller file or share a link instead."; fb.hidden = false; return; }
+      }
       var btn = form.querySelector("[type=submit]");
       var label = btn ? btn.textContent : "";
       var failMsg = "Sorry, your " + kind.noun + " could not be sent. Please email us at <a href=\"" + mailto + "\">" + to + "</a>.";
       if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
-      fetch(cfg.endpoint.replace(/\/$/, "") + "/ajax", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload)
-      })
+      // CLIMASTRA form relay (Cloudflare Worker): multipart form data, JSON reply {ok, error}
+      fetch(cfg.endpoint, { method: "POST", body: d, headers: { Accept: "application/json" } })
         .then(function (r) {
-          if (r.ok) {
-            fb.innerHTML = "<strong>Thank you.</strong> " + kind.thanks + clean(d.get("email")) + ".";
-            form.reset();
-            return;
-          }
-          return r.text().then(function (t) {
-            var detail = "";
-            try { var j = JSON.parse(t); detail = j.message || j.error || (j.errors && j.errors.join ? j.errors.join("; ") : ""); } catch (err) {}
-            fb.innerHTML = failMsg + (detail ? " (" + clean(detail) + ")" : "");
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            if (r.ok && j.ok !== false) {
+              fb.innerHTML = "<strong>Thank you.</strong> " + kind.thanks + clean(d.get("email")) + ".";
+              form.reset();
+              return;
+            }
+            // Validation messages from the relay are shown as they are
+            fb.innerHTML = j.error && r.status === 400 ? clean(j.error) : failMsg + (j.error ? " (" + clean(j.error) + ")" : "");
           });
         })
         .catch(function () { fb.innerHTML = failMsg; })
