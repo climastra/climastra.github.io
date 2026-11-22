@@ -272,9 +272,7 @@ ul.task-list li input[type="checkbox"] {
         <!-- Sent to CLIMASTRA's own form relay (Cloudflare Worker → Resend); settings
              in _data/forms.yml. If sending fails, the visitor is offered
              contact@climastra.in instead (data-mailto). -->
-<div class="form-switch is-closed" data-form="contact">
-<div class="form-closed" role="status"><p class="fc-title">Our contact form is paused</p>
-<p>We’re not taking enquiries through this form at the moment. You can still email us at <a href="mailto:contact@climastra.in">contact@climastra.in</a>.</p></div></div>
+<div class="form-switch" data-form="contact" data-endpoint="https://climastra-forms.climastra.workers.dev/contact" data-sitekey="0x4AAAAAAGMScJOJtYjyU8oo" hidden=""></div>
         <form id="contact-form" class="js-form" data-kind="enquiry" method="post" data-mailto="contact@climastra.in">
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="form-grid two">
